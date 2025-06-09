@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.5'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'org.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(24)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation("org.hibernate.orm:hibernate-core:6.6.13.Final")
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-hibernate5-jakarta
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5-jakarta:2.14.0'
+    implementation("org.hibernate:hibernate-core:6.6.13.Final")
+    implementation("com.mchange:c3p0:0.11.0")
+    implementation("org.springframework:spring-orm:6.2.6")
+    implementation("org.springframework:spring-core:6.2.6")
+    implementation("org.postgresql:postgresql:42.2.5")
+    runtimeOnly 'org.postgresql:postgresql'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin
+
+    implementation("jakarta.servlet:jakarta.servlet-api:6.1.0")
+    implementation("jakarta.servlet:jakarta.servlet-api:6.1.0")
+    implementation("org.springframework.security:spring-security-config:6.4.5")
+    implementation("org.springframework.security:spring-security-web:6.4.5")
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
