@@ -28,4 +28,8 @@ public class ServiceMarks implements ServiceMarksInterface{
     public void addMarks(Marks marks){
         showMarks.addMarks(marks);
     }
+    @Override
+    public void updateMark(Marks mark){
+        showMarks.updateMark(mark);
+    }
 }

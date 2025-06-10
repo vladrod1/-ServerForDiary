@@ -10,7 +10,7 @@ public class Marks {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "marks_id")
-    private int id;
+    private int marks_id;
 
     @Column(name = "id_student")
     private int id_student;
@@ -26,8 +26,8 @@ public class Marks {
 
     public Marks(){}
 
-    public Marks(int id, int id_student, Integer mat, Integer fiz, Integer engl, Integer russ_yz) {
-        this.id = id;
+    public Marks(int marks_id, int id_student, Integer mat, Integer fiz, Integer engl, Integer russ_yz) {
+        this.marks_id = marks_id;
         this.id_student = id_student;
         this.mat = mat;
         this.fiz = fiz;
@@ -36,11 +36,11 @@ public class Marks {
     }
 
     public int getId() {
-        return id;
+        return marks_id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.marks_id = marks_id;
     }
 
     public int getId_student() {

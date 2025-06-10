@@ -9,4 +9,5 @@ public interface ShowMarksInterface {
     public List<Marks> showAllMarks();
     public List<Marks> showMarksOfClass(int id);
     public void addMarks(Marks marks);
+    public void updateMark(Marks marks);
 }

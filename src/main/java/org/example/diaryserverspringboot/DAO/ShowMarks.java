@@ -32,6 +32,11 @@ public class ShowMarks implements ShowMarksInterface{
     @Override
     public void addMarks(Marks marks){
         Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(marks);
+        session.save(marks);
+    }
+    @Override
+    public void updateMark(Marks mark){
+        Session session = sessionFactory.getCurrentSession();
+        session.createQuery("update Marks set id_student = :" + mark.getId_student() + ", russ_yz = :" + mark.getRuss_yz() + ", mat = :" + mark.getMat() + ", fiz = :" + mark.getFiz() + ", engl = :" + mark.getEngl() + " where marks_id = : 5");
     }
 }

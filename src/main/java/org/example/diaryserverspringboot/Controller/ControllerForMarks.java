@@ -25,7 +25,7 @@ public class ControllerForMarks {
         serviceMarks.addMarks(marks);
     }
     @PutMapping("/updateMarks")
-    public void updateMark(@RequestBody Marks marks){
-        serviceMarks.addMarks(marks);
+    public void updateMark(@RequestBody Marks mark){
+        serviceMarks.updateMark(mark);
     }
 }
