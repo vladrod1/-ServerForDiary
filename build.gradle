@@ -12,6 +12,13 @@ java {
         languageVersion = JavaLanguageVersion.of(24)
     }
 }
+jar {
+    manifest {
+        attributes(
+                'Main-Class':'org.example.diaryserverspringboot.DiaryServerSpringBootApplication'
+        )
+    }
+}
 
 repositories {
     mavenCentral()
@@ -43,3 +50,4 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+tasks.named('bootJar') {     launchScript() }

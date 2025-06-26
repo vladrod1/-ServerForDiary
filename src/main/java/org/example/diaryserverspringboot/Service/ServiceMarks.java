@@ -29,6 +29,7 @@ public class ServiceMarks implements ServiceMarksInterface{
         showMarks.addMarks(marks);
     }
     @Override
+    @Transactional
     public void updateMark(Marks mark){
         showMarks.updateMark(mark);
     }

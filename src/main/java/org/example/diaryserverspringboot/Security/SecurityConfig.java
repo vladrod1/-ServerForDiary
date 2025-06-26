@@ -34,7 +34,6 @@ public class SecurityConfig{
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.authorizeHttpRequests(user -> user.requestMatchers(new AntPathRequestMatcher("/")).hasAnyRole("ADMIN")
                     .anyRequest().authenticated()).formLogin(withDefaults()).httpBasic(withDefaults());
-        httpSecurity.csrf().disable();
         return httpSecurity.build();
     }
 
